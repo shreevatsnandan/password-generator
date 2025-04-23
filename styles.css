@@ -1,0 +1,140 @@
+:root {
+  --bg-color: #1a1a2e;
+  --card-color: #16213e;
+  --text-color: #e6e6e6;
+  --primary-color: #0f3460;
+  --secondary-color: #533483;
+  --accent-color: #00b4d8;
+}
+
+label{
+    color: #fff
+}
+
+body {
+  padding: 15px;
+  width: 350px;
+  font-size: 14px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--card-color);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  border-bottom: none;
+  font-weight: 600;
+}
+
+#password-output {
+  font-family: monospace;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.form-control, .form-control:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--accent-color);
+}
+
+.form-range::-moz-range-thumb {
+  background: var(--accent-color);
+}
+
+.form-range::-ms-thumb {
+  background: var(--accent-color);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: #0096c7;
+  border-color: #0096c7;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.btn-outline-secondary {
+  border-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.list-group-item {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+}
+
+hr {
+  border-color: var(--secondary-color);
+  opacity: 0.3;
+}
+
+.form-check-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Animation for generate button */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+#generate-btn {
+  animation: pulse 2s infinite;
+}
+
+/* Glow effect for password */
+.password-glow {
+  text-shadow: 0 0 8px var(--accent-color);
+  transition: text-shadow 0.3s ease;
+}
+.hiddenText{ font-size: 0}
+.hiddenText::before{ 
+    content: '∗∗∗∗∗'; font-size: initial
+}  
