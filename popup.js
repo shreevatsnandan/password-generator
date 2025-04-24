@@ -3,7 +3,6 @@ const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numberChars = "0123456789";
 const symbolChars = "!@#$%^&*()_+{}[]|:;<>,.?/~";
 
-// DOM elements
 const lengthSlider = document.getElementById("length");
 const sliderValue = document.getElementById("slider-value");
 const lowercaseCheckbox = document.getElementById("lowercase");
@@ -19,7 +18,6 @@ const userInput = document.getElementById("username");
 const clearHistoryBtn = document.getElementById("clear-history");
 const searchInput = document.getElementById("search-input");
 
-// Event Listeners
 lengthSlider.addEventListener("input", () => {
   sliderValue.textContent = lengthSlider.value;
 });
@@ -30,16 +28,13 @@ saveBtn.addEventListener("click", savePassword);
 clearHistoryBtn.addEventListener("click", clearHistory);
 searchInput.addEventListener("input", searchPasswords);
 
-// Initialize
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  // Load saved passwords
   chrome.storage.local.get(["passwords"], (result) => {
     renderPasswordList(result.passwords || []);
   });
 
-  // Try to get current domain
   getCurrentTabDomain();
 }
 
@@ -239,7 +234,7 @@ function renderEditForm(entry, index) {
     chrome.storage.local.get(["passwords"], (result) => {
       const passwords = result.passwords || [];
       passwords[index] = {
-        site: siteInput.value.trim(),
+        site: siteInput.value.trim(),  
         username: userInput.value.trim(),
         password: passInput.value.trim()
       };
